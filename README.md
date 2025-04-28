@@ -1,7 +1,10 @@
+# Mobius Digital Application Code Samples
 This repo is contains samples of code intended for Mobius Digital's application process that I have written for Sleep Herd.
 
+### Brief Description
 I've selected a broad range of different samples of code that are easy to understand outside of their original context to showcase the different breadth of my programming ability. 
 
+### Contents
 The repo contains 3 snippets of code:
 - Scene transition system
     - Showcases use of Unity's scriptable objects for easy tuning of parameters
