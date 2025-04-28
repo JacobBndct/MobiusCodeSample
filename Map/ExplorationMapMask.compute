@@ -1,0 +1,14 @@
+#pragma kernel CSMain
+
+RWTexture2D<float4> ResultTexture;
+StructuredBuffer<uint> ExplorationData;
+
+[numthreads(8, 8, 1)]
+void CSMain(uint3 id : SV_DispatchThreadID)
+{
+    uint byteIndex = id.y * (256 / 32) + (id.x / 32);
+    uint bitPosition = id.x % 32;
+
+    bool isExplored = (ExplorationData[byteIndex] & (1 << bitPosition)) != 0;
+    ResultTexture[id.xy] = isExplored ? float4(0, 0, 0, 0) : float4(0, 0, 0, 1);
+}
